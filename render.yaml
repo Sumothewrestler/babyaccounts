@@ -3,11 +3,11 @@ services:
     name: babyaccounts
     env: python
     buildCommand: "./build.sh"
-    startCommand: "gunicorn babyaccounts.wsgi:application"
+    startCommand: "gunicorn myproject.wsgi:application"
     envVars:
       - key: SECRET_KEY
         generateValue: true
       - key: DEBUG
         value: False
       - key: PYTHON_VERSION
-        value: 3.12.0
+        value: 3.11.0

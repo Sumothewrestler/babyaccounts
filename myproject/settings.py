@@ -27,9 +27,14 @@ DEBUG = os.environ.get('DEBUG', 'True') == 'True'  # Default to True for local d
 
 # Allowed Hosts
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+
+# Add your Render domain to ALLOWED_HOSTS
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+
+# Add your specific Render domain
+ALLOWED_HOSTS.append('babyaccounts.onrender.com')
 
 # Application definition
 INSTALLED_APPS = [

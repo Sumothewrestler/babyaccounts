@@ -149,7 +149,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:5173",
     "https://babyaccounts.onrender.com",
-    "https://babyaccounts-frontend.onrender.com",  # Add your frontend domain
+    "https://babyaccounts-frontend.onrender.com",
+    "https://babyaccounts-ptc66lakw-sumothewrestlers-projects.vercel.app"  # Add your frontend domain
 ]
 
 if RENDER_EXTERNAL_HOSTNAME:

@@ -19,8 +19,17 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     'babyaccounts.onrender.com',
-    'dpg-ct9gsntumphs739ddbj0-a',  # Database hostname
+    '.onrender.com',  # Allows all subdomains of onrender.com
 ]
+
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+
+# Get additional allowed hosts from environment variable
+ALLOWED_HOSTS_ENV = os.environ.get('ALLOWED_HOSTS', '')
+if ALLOWED_HOSTS_ENV:
+    ALLOWED_HOSTS.extend(ALLOWED_HOSTS_ENV.split(','))
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:

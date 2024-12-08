@@ -1,9 +1,11 @@
 """
 Django settings for myproject project.
 """
-
-from pathlib import Path
+# Add this temporarily at the top of settings.py to debug
 import os
+print("DEBUG setting:", os.environ.get('DEBUG'))
+print("DJANGO_SETTINGS_MODULE:", os.environ.get('DJANGO_SETTINGS_MODULE'))
+from pathlib import Path
 from dotenv import load_dotenv
 
 # Load environment variables
